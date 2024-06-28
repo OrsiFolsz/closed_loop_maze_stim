@@ -9,7 +9,7 @@ import numpy as np
 
 # This class should be have the same name as the file and inherit the API class
 # look at gui/api.py to see what functions can be redefined and called
-class m25_API(Api):
+class m25_corners_API(Api):
     def __init__(self):
         """User Api class is initialised when the task is uploaded to the board"""
         # put here thing you want to intialise. these will be instance attributes so availale to all methods
