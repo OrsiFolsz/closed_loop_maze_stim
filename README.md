@@ -17,13 +17,12 @@ Main components:
 - Modules used for calibration (based on Peter's preprecessing pipeline).
 
 Notes for use:
-- Requires Pycontrol and Bonsai.
 - Move files in api_classes into api_classes folder in your Pycontrol folder.
 - Move files in pycontrol_tasks into tasks folder in your Pycontrol folder.
 - This code also expects files in helpers and data to be moved into api_classes folder (would be good to organise this better later).
 - Update camera acqusition file based on experiment.
 - If you change maze config, update maze_config file and task file.
-- Before first run or changes to the camera, need to run calibration based on example video. This calibates pixel positions to maze positions to handle camera distortions. See calibration tools (contains necessary modules from preprocesing pipeline). Calibration gives you tower_center_pixel_coords.tsv that specifies in pixel coordinates the centre of maze nodes. This is then used to get maze position by getting node/edge closest to x-y position of animal. To do calibration, run ..py.
+- Before first run or changes to the camera, need to run calibration based on example video. This calibates pixel positions to maze positions to handle camera distortions. See calibration tools (contains necessary modules from preprocesing pipeline). Calibration gives you tower_center_pixel_coords.tsv that specifies in pixel coordinates the centre of maze nodes. This is then used to get maze position by getting node/edge closest to x-y position of animal. To do calibration, run convert_coordiantes_for_tracking.py.
 - In Bonsai, if you drag largest binary region node then centroid on greyscale visualiser, you can follow tracking and on the recording. Extra click on the mouse makes trajectory appear too.
 - Make sure to run calibration in the crooped version of the bonsai video.
 - For calibraion to work, I had to reverse y coordinates in calibraion function in maze_registration. So now 0,0 coordinate is top left corner in both Bonsai and tower_center_pixel_coord.tsv.
@@ -33,7 +32,8 @@ This has files for basic m25 maze structure and m25_corners structure.
 
 ## Installation
 
-Steps to install your project.
+Requires Pycontrol and Bonsai.
+Pycontrol uses packages form base python environment so API dependencies need to be there (?).
 
 ```bash
 pip install -r requirements.txt
