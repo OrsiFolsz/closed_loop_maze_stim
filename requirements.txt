@@ -1,0 +1,11 @@
+numpy
+networkx
+pandas
+python-osc
+scipy
+json
+os
+cv2
+moviepy
+csv
+python-osc
